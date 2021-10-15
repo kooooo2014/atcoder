@@ -1,24 +1,25 @@
 function Main(input) {
-    input = input.split("\n");
-	var mochis = [];
-    var mochi = 1;
+    input = input.split(" ");
+    var n = parseInt(input[0], 10);
+    var sumMoney = parseInt(input[1], 10);
+    var countMoney = 0;
+    var a = -1;
+    var b = -1;
+    var c = -1;
 
-    for(var i = 1; i < input.length; i++){
-        input[i] = parseInt(input[i], 10);
-      	mochis[i-1] = input[i];
+    for(var i = 0; i < n+1; i++){
+        for(var j = 0; j < (n-i)+1; j++){
+            var k = n-i-j;
+            countMoney = (i*10000) + (j*5000) + (k*1000);
+          	if(countMoney === sumMoney){
+              a = i;
+              b = j;
+              c = k;
+            }
+        }
     }
 
-    mochis.sort(function(a, b) {
-        return a-b;
-    });
-
-    for(var j = 1; j < mochis.length; j++){
-      if(mochis[j-1] < mochis[j] ) {
-            mochi ++;
-      }    
-    }
-
-    console.log(mochi);
+    console.log(a, b, c);
 }
 
 Main(require("fs").readFileSync("/dev/stdin", "utf8"));
