@@ -2,8 +2,6 @@ function Main(input) {
     input = input.split("\n");
     var a = input[1].split(" ");
     var aSum = BigInt(0);
-    var tmp = BigInt(0);
-
     
     for (var i = 0; i < a.length; i++){
         a[i] = BigInt(parseInt(a[i], 10));
