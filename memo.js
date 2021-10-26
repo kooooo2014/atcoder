@@ -1,6 +1,15 @@
 //複数種類の文字のsplit
 input = input.split(/[\s\n]/)
 
+//int変換(10進数)
+var k = parseInt(input[0], 10);
+
+//for文
+for(var i = 0; i< a.length ; i++){
+    
+}
+
+
 //累乗
 a ** b
 
@@ -10,11 +19,5 @@ Number()
 String()
 
 //ABC~出力
-var startStr="A";
-var endStr="Z";
-for(var i=startStr.charCodeAt(0);i<=endStr.charCodeAt(0);i++){
-    document.write(String.fromCharCode(i));
-}
-
 var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
