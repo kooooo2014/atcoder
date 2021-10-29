@@ -12,16 +12,47 @@ for(var i = 0; i< a.length ; i++){
 //累乗
 a ** b
 
-//bit全探索
-for(let i = 0; i < (1 << n); i++){
-    let candidate = "";
+//絶対値
+Math.abs(a - b);
 
-}
+//sort
+array.sort(function(a, b) {
+    return a-b;
+});
 
 //iのjビット目が0ならば
 if((i & (1 << j)) == 0){
      
 }
+
+//<探索>
+    //bit全探索
+    for(let i = 0; i < (1 << n); i++){
+        let candidate = "";
+
+    }
+
+    //2分木探索
+    function binary_search(key) {
+        let searchLeft = 0;
+        let searchRight = a.length - 1;
+        let half;
+        
+        while (searchLeft <= searchRight) {        
+            half = Math.ceil((searchRight + searchLeft) / 2);
+
+            if (key < a[half]) {
+                searchRight = half;
+            } else if (key > a[half]) {
+                searchLeft = half;
+            } else if (key == a[half]) {
+
+                return;
+            }
+        }
+    }
+
+
 
 
 //<型変換>
