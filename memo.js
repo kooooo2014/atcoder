@@ -63,6 +63,7 @@ if((i & (1 << j)) == 0){
 
     // は配列をすべてnumber型に
     array.map(e => parseInt(e, 10));
+    let a = input[1].split(" ").map(e => parseInt(e, 10));
 
 
 // <出力>
@@ -71,7 +72,8 @@ if((i & (1 << j)) == 0){
     var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
     //配列を\s区切りで出力
-    console.log(array[i].join(" "));
+    console.log(array.join(" "));
+
 
 
 
