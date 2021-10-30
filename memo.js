@@ -61,6 +61,8 @@ if((i & (1 << j)) == 0){
     Number()
     String()
 
+    input = input.split(" ").map(BigInt);
+
     // は配列をすべてnumber型に
     array.map(e => parseInt(e, 10));
     let a = input[1].split(" ").map(e => parseInt(e, 10));
@@ -73,6 +75,18 @@ if((i & (1 << j)) == 0){
 
     //配列を\s区切りで出力
     console.log(array.join(" "));
+
+
+//<最大公約数を求める>
+const gcd = function () {
+    const f = (x, y) => y ? f(y, x % y) : x
+    let ans = arguments[0]
+    for (let i = 1; i < arguments.length; i++) {
+        ans = f(ans, arguments[i]);
+    }
+    return ans
+}
+const maxG = gcd(a, b, c);
 
 
 
