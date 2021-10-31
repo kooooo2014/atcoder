@@ -88,6 +88,32 @@ const gcd = function () {
 }
 const maxG = gcd(a, b, c);
 
+//Set()
+const set = new Set();
+set.add(x);
+    //set[x]
+set.clear();
+    //要素すべて取り除く
+set.delete(x);
+    //xを取り除く
+set.has(x);
+    //xがあるか確認してtrue or falseを返す
+
+//Map()
+const map = new Map()
+map.size   
+    //mapオブジェクトのキーと値の組の数を返す
+map.clear()
+    //すべてのキーと値の組を返す
+map.delete(key)
+    //keyの要素が存在し、かつ削除できた場合にtrueを返す
+map.has(key)
+    //xがあるか確認してtrue or falseを返す
+map.set(key, value)
+    //keyで指定されたキーの値をvalueに設定し、mapオブジェクト自体を返す
+
+
+
 
 
 
