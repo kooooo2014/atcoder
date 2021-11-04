@@ -1,8 +1,24 @@
-//複数種類の文字のsplit
-input = input.split(/[\s\n]/)
+//<型変換>
+    //基本
+    BigInt()
+    Number()
+    String()
 
-//int変換(10進数)
-var k = parseInt(input[0], 10);
+    input = input.split(" ").map(BigInt);
+
+    //int変換(10進数)
+    var k = parseInt(input[0], 10);
+
+    // は配列をすべてnumber型に
+    array.map(e => parseInt(e, 10));
+    let a = input[1].split(" ").map(e => parseInt(e, 10));
+
+    //複数種類の文字のsplit
+    input = input.split(/[\s\n]/)
+
+    
+//配列生成し、その配列すべてにtrueを入れる(n*n行列)
+let s = Array.from(new Array(n), () => new Array(n).fill(true));
 
 //for文
 for(var i = 0; i< a.length ; i++){
@@ -55,17 +71,6 @@ if((i & (1 << j)) == 0){
 
 
 
-//<型変換>
-    //基本
-    BigInt()
-    Number()
-    String()
-
-    input = input.split(" ").map(BigInt);
-
-    // は配列をすべてnumber型に
-    array.map(e => parseInt(e, 10));
-    let a = input[1].split(" ").map(e => parseInt(e, 10));
 
 
 // <出力>
@@ -87,6 +92,37 @@ const gcd = function () {
     return ans
 }
 const maxG = gcd(a, b, c);
+
+
+//<順列を生成する関数 n!>
+function next_permutation(arr) {
+    const len = arr.length;
+    let left = len - 2;
+    while (left >= 0 && arr[left] >= arr[left+1]) left--;
+    if (left < 0) return false;
+    let right = len - 1;
+    while (arr[left] >= arr[right]) right--;
+    { const t = arr[left]; arr[left] = arr[right]; arr[right] = t; }
+    left++;
+    right = len - 1;
+    while (left < right) {
+        { const t = arr[left]; arr[left] = arr[right]; arr[right] = t; }
+        left++;
+        right--;
+    }
+    return true;
+}
+//順列の使用例
+//（10 20 30 40）の順列を生成してるやつ
+const len = 4;
+const arr = [];
+for (let i = 0; i < len; i++) arr.push(10 * (i+1));
+do {
+    let str = "";
+    for (let i = 0; i < len; i++) str += " " + arr[i];
+    console.log(str);
+} while (next_permutation(arr));
+
 
 //Set()
 const set = new Set();
