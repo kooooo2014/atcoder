@@ -124,6 +124,33 @@ do {
 } while (next_permutation(arr));
 
 
+//組み合わせ
+function combination(nums, k){
+    let ans = [];
+    if (nums.length < k) {
+        return []
+    }
+    if (k === 1) {
+        for (let i = 0; i < nums.length; i++) {
+            ans[i] = [nums[i]];
+        }
+    } else {
+        for (let i = 0; i < nums.length - k + 1; i++) {
+            let row = combination(nums.slice(i + 1), k - 1);
+            for (let j = 0; j < row.length; j++) {
+                ans.push([nums[i]].concat(row[j]));
+            }
+        }
+    }
+    return ans;
+}
+
+//組み合わせの使用例
+let arr = combination(['a', 'b', 'c'], 2)
+console.log(JSON.stringify(arr))
+// [["a","b"],["a","c"],["b","c"]]
+
+
 //Set()
 const set = new Set();
 set.add(x);
