@@ -9,6 +9,9 @@
     //int変換(10進数)
     var k = parseInt(input[0], 10);
 
+    //文字列（８進数）
+    let n = '0o' + N;
+
     // は配列をすべてnumber型に
     array.map(e => parseInt(e, 10));
     let a = input[1].split(" ").map(e => parseInt(e, 10));
@@ -23,6 +26,14 @@ let s = Array.from(new Array(n), () => new Array(n).fill(true));
 //for文
 for(var i = 0; i< a.length ; i++){
     
+}
+
+//文字列中の８の個数を返す
+count = ( String(N9).match( /8/g ) || [] ).length;
+
+//文字列中の8を5に変える
+for(let i = 0; i < count; i++){
+    array = array.replace("8", "5");
 }
 
 //累乗
@@ -150,6 +161,39 @@ let arr = combination(['a', 'b', 'c'], 2)
 console.log(JSON.stringify(arr))
 // [["a","b"],["a","c"],["b","c"]]
 
+//素因数分解
+function pf(n) {
+    var result = [];
+
+    if (n === 1) {
+        return [1];
+    }
+
+    var init = 2;
+
+    while ( n !== 1 ) {
+        var i = init;
+        while (i < Number.MAX_SAFE_INTEGER) {
+            if (n % i == 0) {
+                result.push(i)
+                n /= i;
+                break;
+            }
+            i++;
+        }
+        init = i;
+    }
+    return result;
+}
+
+console.log(JSON.stringify(pf(1)))
+console.log(JSON.stringify(pf(4)))
+console.log(JSON.stringify(pf(27)))
+console.log(JSON.stringify(pf(972439611840)))
+// [1]
+// [2,2]
+// [3,3,3]
+// [2,2,2,2,2,2,3,3,3,5,103,103,103,103]
 
 //Set()
 const set = new Set();
